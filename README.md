@@ -1,0 +1,2 @@
+# GoboServer
+GoboServer -- scratch ploject
