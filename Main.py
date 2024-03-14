@@ -22,9 +22,9 @@ while True:
     time.sleep(5)
     getdata1=requests.get(f"https://api.scratch.mit.edu/users/{act}/messages/count/").json()
     conn.set_var("messeage",str(getdata1["count"]))
-    getdata2=len(requests.get(f"https://api.scratch.mit.edu/users/{act}/followers/").json())
+    getdata2=scratch3.get_user(act).following_count()
     conn.set_var("follow",str(getdata2))
-    getdata3=len(requests.get(f"https://api.scratch.mit.edu/users/{act}/following/").json())
+    getdata3=scratch3.get_user(act).follower_count()
     conn.set_var("follower",str(getdata3))
 
 conn.disconnect()
